@@ -13,7 +13,7 @@ public class Main {
 		if (args.length != 0) {
 			ApplicationEnvironment.setPropertyLang(args[0]);
 		} else {
-			ApplicationEnvironment.setPropertyLang("en");
+			ApplicationEnvironment.setPropertyLang("ru");
 		}
 		dataBuilder.buildDataList();
 	}

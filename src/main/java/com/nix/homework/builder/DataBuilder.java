@@ -22,7 +22,7 @@ public class DataBuilder implements AbstractBuilder {
 	public void buildDataList() {
 		for(Map.Entry<String, String> entry: getKeyValueMapByBundleProperties(ApplicationEnvironment.getPropertyLang()).entrySet()) {
 			Course course = new Course();
-			String courseNameProperties = String.join("", entry.getKey().split("_"));
+			String courseNameProperties = String.join(" ", entry.getKey().split("_"));
 			course.setCourseName(courseNameProperties);
 
 			List<Student> studentList = new ArrayList<>();
