@@ -6,8 +6,8 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 public class BundleUtil {
-	private static final ResourceBundle RESOURCE_COURSES_EN = ResourceBundle.getBundle("books_en");
-	private static final ResourceBundle RESOURCE_COURSES_RU = ResourceBundle.getBundle("books_ru");
+	private static final ResourceBundle RESOURCE_COURSES_EN = ResourceBundle.getBundle("courses_en");
+	private static final ResourceBundle RESOURCE_COURSES_RU = ResourceBundle.getBundle("courses_ru");
 
 	public static Map<String, String> getBundleProperties(String lang) {
 		return convertResourceBundleToMap(getBundle(lang));

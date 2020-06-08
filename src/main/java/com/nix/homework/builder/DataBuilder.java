@@ -46,8 +46,15 @@ public class DataBuilder implements AbstractBuilder {
 		}
 
 		courseService.findAll().forEach(currentCourse -> {
-			System.out.println("Course: " + currentCourse.getStudents().toString());
-			System.out.println("Course id: " + currentCourse.getId());
+			StringBuilder students = new StringBuilder();
+			currentCourse.getStudents().forEach(student -> {
+				students.append(student.getFullName());
+				students.append(" ");
+			});
+			students.toString();
+			System.out.println(currentCourse.getCourseName() + " course: " + students);
+			System.out.println(currentCourse.getCourseName() + " course id: " + currentCourse.getId());
+			System.out.println();
 		});
 	}
 
