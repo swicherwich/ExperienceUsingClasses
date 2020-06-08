@@ -22,11 +22,16 @@ public class CourseRepositoryImpl implements CourseRepository {
 	@Override
 	public List<Course> findByStudent(Student student) {
 		for(Course currentCourse: courseList) {
-			currentCourse.getStudents().forEach(currentStudent -> {
+//			currentCourse.getStudents().forEach(currentStudent -> {
+//				if(currentStudent.getId().equals(student.getId())) {
+//					return currentStudent.getCourses();
+//				}
+//			});
+			for(Student currentStudent: currentCourse.getStudents()) {
 				if(currentStudent.getId().equals(student.getId())) {
-					return currentStudent.getCourses();
+					currentStudent.getCourses();
 				}
-			});
+			}
 		}
 		return null;
 	}
@@ -51,12 +56,6 @@ public class CourseRepositoryImpl implements CourseRepository {
 
 	@Override
 	public void update(Course course) {
-//		courseList.forEach(currentCourse -> {
-//			if(course.getId().equals(currentCourse.getId())) {
-//				currentCourse.setStudents(course.getStudents());
-//				currentCourse.setCourseName(course.getCourseName());
-//			}
-//		});
 		for(Course currentCourse: courseList) {
 			if (course.getId().equals(currentCourse.getId())) {
 				currentCourse.setStudents(course.getStudents());
