@@ -46,10 +46,13 @@ public class DataBuilder implements AbstractBuilder {
 		}
 
 		courseService.findAll().forEach(currentCourse -> {
+			final int coma = 0;
 			StringBuilder students = new StringBuilder();
 			currentCourse.getStudents().forEach(student -> {
+				if(coma != currentCourse.getStudents().size()) {
+					students.append(student.getFullName() + ", ");
+				}
 				students.append(student.getFullName());
-				students.append(" ");
 			});
 			students.toString();
 			System.out.println(currentCourse.getCourseName() + " course: " + students);
