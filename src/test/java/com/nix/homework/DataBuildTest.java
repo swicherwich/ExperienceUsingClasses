@@ -2,7 +2,6 @@ package com.nix.homework;
 
 import com.nix.homework.builder.DataBuilder;
 import com.nix.homework.config.ApplicationEnvironment;
-import com.nix.homework.data.Student;
 import com.nix.homework.servise.CourseService;
 import com.nix.homework.servise.StudentService;
 import org.junit.jupiter.api.BeforeAll;
@@ -29,6 +28,9 @@ public class DataBuildTest {
 
 		assertEquals("Math", courseService.findByCourseName("Math").getCourseName());
 		assertEquals("John Brown", studentService.findStudentByName("John Brown").getFullName());
-	}
 
+		courseService.findAll().forEach(currentCourse -> {
+			assertEquals(3, currentCourse.getStudents().size());
+		});
+	}
 }
